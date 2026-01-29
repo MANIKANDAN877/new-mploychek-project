@@ -1,0 +1,55 @@
+<!-- ADMIN VIEW -->
+<div *ngIf="role === 'Admin'" style="padding:20px">
+
+  <h2>Admin Dashboard</h2>
+  <p><b>Logged in as:</b> {{ username }} (Admin)</p>
+
+  <hr>
+
+  <!-- API Delay Control -->
+  <label>API Delay (ms): </label>
+  <input type="number" [(ngModel)]="apiDelay" />
+  <button (click)="loadUsers()">Refresh Users</button>
+
+  <p *ngIf="loading">Loading users... (Async API)</p>
+
+  <h3>User Management</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Role</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.role }}</td>
+    </tr>
+  </table>
+
+</div>
+
+<!-- GENERAL USER VIEW -->
+<div *ngIf="role === 'General User'" style="padding:20px">
+
+  <h2>User Dashboard</h2>
+  <p><b>Logged in as:</b> {{ username }} (General User)</p>
+
+  <hr>
+
+  <h3>Your Records</h3>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Record ID</th>
+      <th>Description</th>
+      <th>Access Level</th>
+    </tr>
+    <tr *ngFor="let record of records">
+      <td>mploy chek is first company to build the online verification aadhar platform</td>
+      <td>secure protocol for job selection</td>
+      <td>make a very efficient manner</td>
+    </tr>
+  </table>
+
+</div>
