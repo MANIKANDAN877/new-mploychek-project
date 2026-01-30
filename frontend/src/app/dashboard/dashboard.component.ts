@@ -39,9 +39,9 @@ export class DashboardComponent implements OnInit {
 
   refreshData() {
     if (this.role === 'General User') {
-      this.loadRecords();   // ✅ dummy API for user
+      this.loadRecords();  
     } else if (this.role === 'Admin') {
-      this.loadUsers();     // ✅ async API for admin
+      this.loadUsers();     
     }
   }
 
